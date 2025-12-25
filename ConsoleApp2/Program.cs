@@ -5,10 +5,11 @@
         static void Main(string[] args)
         {
             var lengthValidator = new LengthValidator();
+            var alphabetValidator = new AlphabetValidator();
             var numericValidator = new NumericValidator();
             var rangeValidator = new RangeValidator(1, 100);
 
-            lengthValidator.SetNext(numericValidator).SetNext(rangeValidator);
+            lengthValidator.SetNext(alphabetValidator).SetNext(numericValidator).SetNext(rangeValidator);
 
             Console.WriteLine("Введите данные для валидации:");
             string inputData = Console.ReadLine();
